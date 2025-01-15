@@ -7,7 +7,7 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
+<!-- <style>
   :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
     --electric-violet: oklch(53.18% 0.28 296.97);
@@ -322,7 +322,61 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
+
+
+<div> 
+  ADDING THE PARAMETERS <br/>
+  Today's date :- {{presentDate | date}} 
+</div> <hr/>
+
+
+<div>
+  PARAMETERS IN DATE <br/>
+  This is a short date :- {{presentDate | date: 'shortDate'}} <br/>
+  This line shows the full date :- {{presentDate | date: 'fullDate'}} <br/>
+  This will a show a formatted date :- {{presentDate | date: 'M/dd/yyyy'}}<br/>
+  This indicates the hours and minutes :- {{presentDate | date: 'h:mm a'}} <br/>
+  ============================= <BR/>
+  Kristine Faith G. Tuazon<BR/>
+  WD - 302<BR/>
+  =============================
+</div>
+<hr>
+
+<div>
+CHAINED PIPES <br/>
+  Date with uppercase :- {{presentDate | date: 'fullDate' | uppercase}} <br/>
+  Date with lowercase :- {{presentDate | date: 'fullDate' | lowercase}} <br/>
+</div> <hr/>
+
+<div>
+  Seconds changing in Time: {{ time$ | async | date:'mediumTime '}}
+</div><hr/>
+
+
+<h2>JSON PIPES!</h2>
+<p>Object: {{ testObject }}</p>
+<p>Object with JsonPipe: {{ testObject | json }}</p>
+<p>array: {{ testArray }}</p> <hr/>
+
+<h3>Currency Pipe</h3>
+<p> {{ price | currency: '' :true}}</p>
+<p> {{ price | currency: 'INR'}}</p> <hr>
+
+<div>
+  <h3> Start index:- {{ Fruits | slice:2}}</h3>
+  <h4>Start and end index:- {{Fruits | slice:1:4}}</h4>
+  <h5>Negative start and end index:- {{Fruits | slice:-4:-2}}</h5>
+</div><hr>
+
+<h3> Decimal Pipe</h3>
+<p>{{decimalNum1 | number}} </p>
+<p>{{decimalNum2 | number}} </p><hr>
+
+<p>Apply formatting:- {{decimalNum1 | number: '3.1'}} </p>
+<p>Apply formatting:- {{decimalNum1 | number: '2.1-4'}} </p>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
